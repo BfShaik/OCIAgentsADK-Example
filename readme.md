@@ -16,9 +16,22 @@ Before running this script, ensure you have the following:
 
 ## Setup
 
-### 1. Install the OCI ADK
+Python
+Create a project with a virtual environment:
 
-You will need to install the OCI Agent Development Kit.
+# Create a project folder with name of your choice
 
-```bash
-pip install oci-adk
+mkdir <your-project-name>
+cd <your-project-name>
+
+# Create and activate a virtual environment under `<myenv>` subfolder
+
+python -m venv <myenv>
+source <myenv>/bin/activate
+
+Python ADK requires Python 3.10 or later. Ensure you have the correct version of Python installed in your environment.
+
+Installing the ADK
+After you create a project and a virtual environment, install the latest version of ADK:
+
+pip install "oci[adk]"
