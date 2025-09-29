@@ -1,0 +1,73 @@
+OCI RAG Agent - Knowledge Base Chatbot
+This project demonstrates an Agentic AI implementation using Oracle Cloud Infrastructure (OCI) Generative AI services. The agent is configured to act as an intelligent chatbot that answers questions by retrieving context from a specialized OCI knowledge base.
+
+🚀 Overview
+The core purpose of this agent is to provide accurate, up-to-date answers about OCI products and services by utilizing a dedicated knowledge base, instead of relying solely on the Large Language Model's (LLM) general training data. This process, known as Retrieval-Augmented Generation (RAG), ensures high-fidelity, relevant responses.
+
+🛠️ Key Components
+Component
+
+Description
+
+firstAgent.py
+
+The main Python script that initializes the agent and its tools.
+
+AgentClient
+
+The client used to connect to the OCI Generative AI service.
+
+AgenticRagTool
+
+The core tool that allows the agent to search and retrieve data from a provisioned OCI Knowledge Base (identified by knowledge_base_id).
+
+Agent
+
+The main entity that defines the agent's behavior (instructions) and the tools it can use.
+
+⚙️ Setup and Prerequisites
+To run this agent, you will need:
+
+OCI Python SDK: Ensure the OCI SDK is installed and configured with the necessary credentials (API key, profile, region).
+
+OCI Agent Resources:
+
+A provisioned OCI Generative AI Knowledge Base (knowledge_base_id).
+
+A deployed OCI Generative AI Agent Endpoint (agent_endpoint_id).
+
+Python Environment:
+
+pip install oci
+
+💻 How to Run
+Clone the repository:
+
+git clone [YOUR_REPO_URL]
+cd [YOUR_REPO_NAME]
+
+Ensure OCI Configuration: Verify your OCI API key and profile are correctly set up.
+
+Execute the script:
+
+python firstAgent.py
+
+The script will set up the agent, run the predefined user query (currently "Give me the list of..."), and print the RAG-enhanced response.
+
+Agent Configuration Snippet
+The following lines from firstAgent.py define the agent's core function:
+
+# Create a RAG tool that uses the knowledge base
+rag_tool = AgenticRagTool(
+    name="OCI RAG tool",
+    description="Use this tool to answer questions about products of Oracle Cloud Infrastructure (OCI).",
+    knowledge_base_ids=[knowledge_base_id],
+)
+
+# Create the agent with the RAG tool
+agent = Agent(
+    client=client,
+    agent_endpoint_id="ocid1.genaiagentendpoint.oc1.iad.amaaaaaa2j5jslyamhyjqz2gxnpt34w2ww7sfjfehsuwajxt32n7kxx6amzq",
+    instructions="Answer question using the OCI RAG tool.",
+    tools=[rag_tool]
+)
