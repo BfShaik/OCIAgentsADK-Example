@@ -17,6 +17,7 @@ def main():
         instructions="Answer question using the OCI SQL tool."        
     )
 
+    # We have configured the SQL tool using the console in this example.
     # Set up the agent once
     agent.setup()
 
