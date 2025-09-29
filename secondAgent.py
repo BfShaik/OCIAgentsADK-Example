@@ -19,7 +19,7 @@ def main():
 
     agent = Agent(
         client=client,
-        agent_endpoint_id="ocid1.genaiagentendpoint.oc1.iad.amaaaaaa2j5jslyamhyjqz2gxnpt34w2ww7sfjfehsuwajxt32n7kxx6amzq",
+        agent_endpoint_id="ocid1.genaiagentendpoint.oc1.iad.amaaaaaa2j5jslyamhyjqz2gxnpt34w2ww7sfjfehsuwajxt32n7kxxxxx",
         instructions="Perform weather queries using the given tools.",
         tools=[get_weather]
     )
