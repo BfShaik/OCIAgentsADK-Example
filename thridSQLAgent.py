@@ -13,7 +13,7 @@ def main():
     # Create the agent with the RAG tool
     agent = Agent(
         client=client,
-        agent_endpoint_id="ocid1.genaiagentendpoint.oc1.iad.amaaaaaa2j5jslyamhyjqz2gxnpt34w2ww7sfjfehsuwajxt32n7kxx6amzq",
+        agent_endpoint_id="ocid1.genaiagentendpoint.oc1.iad.amaaaaaa2j5jslyamhyjqz2gxnpt34w2ww7sfjfehsuwajxt32n7xxxx",
         instructions="Answer question using the OCI SQL tool."        
     )
 
