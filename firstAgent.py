@@ -10,7 +10,7 @@ def main():
     )
 
     # Assuming the knowledge base is already provisioned
-    knowledge_base_id = "ocid1.genaiagentknowledgebase.oc1.iad.amaaaaaa2j5jslyayo44m5o2i2ofxf3h3v6kldg7gfjj5l26qfntw36u5liq"
+    knowledge_base_id = "ocid1.genaiagentknowledgebase.oc1.iad.amaaaaaa2j5jslyayo44m5o2i2ofxf3h3v6kldg7gfjj5l26qfxxxx"
 
     # Create a RAG tool that uses the knowledge base
     # The tool name and description are optional, but strongly recommended for LLM to understand the tool.
@@ -23,7 +23,7 @@ def main():
     # Create the agent with the RAG tool
     agent = Agent(
         client=client,
-        agent_endpoint_id="ocid1.genaiagentendpoint.oc1.iad.amaaaaaa2j5jslyamhyjqz2gxnpt34w2ww7sfjfehsuwajxt32n7kxx6amzq",
+        agent_endpoint_id="ocid1.genaiagentendpoint.oc1.iad.amaaaaaa2j5jslyamhyjqz2gxnpt34w2ww7sfjfehsuwajxt32n7kxxxxx",
         instructions="Answer question using the OCI RAG tool.",
         tools=[rag_tool]
     )
